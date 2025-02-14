@@ -32,7 +32,7 @@ export default function Page() {
           className="group block"
         >
           <Stack gap={3}>
-            <Text value={item.title} size="lg" color="inherit" />
+            <Text value={item.title} color="inherit" />
             <Inline gap={1}>
               <Text value={item.date.toLocaleDateString()} size="sm" color="light" />
               <Text value="·" size="sm" color="light" />
