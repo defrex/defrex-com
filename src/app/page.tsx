@@ -1,4 +1,5 @@
-import Link from "next/link";
+import { Text } from '@/components/text/text'
+import Link from 'next/link'
 
 export default function Page() {
   return (
@@ -6,21 +7,15 @@ export default function Page() {
       <header className="max-w-6xl mx-auto">
         <nav className="flex justify-between items-start mb-16">
           <div>
-            <h1 className="text-white text-5xl font-light mb-2">Aron Jones</h1>
-            <p className="text-zinc-400 text-2xl font-light">Superhumanist</p>
+            <Text as="h1" value="Aron Jones" className="text-5xl font-light mb-2" />
+            <Text value="Superhumanist" className="text-2xl font-light" color="light" />
           </div>
           <div className="flex gap-8 text-xl">
-            <Link
-              href="#"
-              className="text-white hover:text-purple-400 transition-colors"
-            >
-              GitHub
+            <Link href="#" className="text-white hover:text-purple-400 transition-colors">
+              <Text value="GitHub" color="inherit" />
             </Link>
-            <Link
-              href="#"
-              className="text-white hover:text-purple-400 transition-colors"
-            >
-              LinkedIn
+            <Link href="#" className="text-white hover:text-purple-400 transition-colors">
+              <Text value="LinkedIn" color="inherit" />
             </Link>
           </div>
         </nav>
@@ -30,49 +25,53 @@ export default function Page() {
         <div className="space-y-4">
           <Link href="#" className="group block">
             <div className="text-zinc-500 text-sm mb-1">
-              <span>Feb 14, 2025</span>
-              <span className="mx-2">·</span>
-              <span>Experiment</span>
+              <Text value="Feb 14, 2025" color="inherit" size="sm" />
+              <Text value=" · " color="inherit" size="sm" />
+              <Text value="Experiment" color="inherit" size="sm" />
             </div>
             <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              Neuroevolution
+              <Text value="Neuroevolution" color="inherit" size="xl" />
             </div>
           </Link>
 
           <Link href="#" className="group block">
             <div className="text-zinc-500 text-sm mb-1">
-              <span>Feb 10, 2025</span>
-              <span className="mx-2">·</span>
-              <span>Article</span>
+              <Text value="Feb 10, 2025" color="inherit" size="sm" />
+              <Text value=" · " color="inherit" size="sm" />
+              <Text value="Article" color="inherit" size="sm" />
             </div>
             <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              Normativity
+              <Text value="Normativity" color="inherit" size="xl" />
             </div>
           </Link>
 
           <Link href="#" className="group block">
             <div className="text-zinc-500 text-sm mb-1">
-              <span>Feb 05, 2025</span>
-              <span className="mx-2">·</span>
-              <span>Article</span>
+              <Text value="Feb 05, 2025" color="inherit" size="sm" />
+              <Text value=" · " color="inherit" size="sm" />
+              <Text value="Article" color="inherit" size="sm" />
             </div>
             <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              Maxwell&apos;s Demon is You!
+              <Text value="Maxwell's Demon is You!" color="inherit" size="xl" />
             </div>
           </Link>
 
           <Link href="#" className="group block">
             <div className="text-zinc-500 text-sm mb-1">
-              <span>Jan 30, 2025</span>
-              <span className="mx-2">·</span>
-              <span>Article</span>
+              <Text value="Jan 30, 2025" color="inherit" size="sm" />
+              <Text value=" · " color="inherit" size="sm" />
+              <Text value="Article" color="inherit" size="sm" />
             </div>
             <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              First, know that everything you believe is wrong
+              <Text
+                value="First, know that everything you believe is wrong"
+                color="inherit"
+                size="xl"
+              />
             </div>
           </Link>
         </div>
       </main>
     </div>
-  );
+  )
 }
