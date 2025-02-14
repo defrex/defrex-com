@@ -1,77 +1,48 @@
+import { neuroevolutionPath } from '@/app/experiments/neuroevolution/path'
+import { postDetailsPath } from '@/app/posts/[slug]/path'
+import { Inline } from '@/components/inline'
+import { Stack } from '@/components/stack'
+import { TextLink } from '@/components/text-link'
 import { Text } from '@/components/text/text'
-import Link from 'next/link'
+import { postList } from '@/lib/post-list'
+
+const experiments = [
+  {
+    title: 'Neuroevolution',
+    href: neuroevolutionPath(),
+    date: new Date('2025-02-14'),
+    type: 'experiment',
+  },
+]
 
 export default function Page() {
+  const posts = postList().map((post) => ({
+    ...post,
+    type: 'post',
+  }))
+
+  const items = [...posts, ...experiments].sort((a, b) => b.date.getTime() - a.date.getTime())
+
   return (
-    <div className="p-8">
-      <header className="max-w-6xl mx-auto">
-        <nav className="flex justify-between items-start mb-16">
-          <div>
-            <Text as="h1" value="Aron Jones" className="text-5xl font-light mb-2" />
-            <Text value="Superhumanist" className="text-2xl font-light" color="light" />
-          </div>
-          <div className="flex gap-8 text-xl">
-            <Link href="#" className="text-white hover:text-purple-400 transition-colors">
-              <Text value="GitHub" color="inherit" />
-            </Link>
-            <Link href="#" className="text-white hover:text-purple-400 transition-colors">
-              <Text value="LinkedIn" color="inherit" />
-            </Link>
-          </div>
-        </nav>
-      </header>
-
-      <main className="max-w-6xl mx-auto">
-        <div className="space-y-4">
-          <Link href="#" className="group block">
-            <div className="text-zinc-500 text-sm mb-1">
-              <Text value="Feb 14, 2025" color="inherit" size="sm" />
-              <Text value=" · " color="inherit" size="sm" />
-              <Text value="Experiment" color="inherit" size="sm" />
-            </div>
-            <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              <Text value="Neuroevolution" color="inherit" size="xl" />
-            </div>
-          </Link>
-
-          <Link href="#" className="group block">
-            <div className="text-zinc-500 text-sm mb-1">
-              <Text value="Feb 10, 2025" color="inherit" size="sm" />
-              <Text value=" · " color="inherit" size="sm" />
-              <Text value="Article" color="inherit" size="sm" />
-            </div>
-            <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              <Text value="Normativity" color="inherit" size="xl" />
-            </div>
-          </Link>
-
-          <Link href="#" className="group block">
-            <div className="text-zinc-500 text-sm mb-1">
-              <Text value="Feb 05, 2025" color="inherit" size="sm" />
-              <Text value=" · " color="inherit" size="sm" />
-              <Text value="Article" color="inherit" size="sm" />
-            </div>
-            <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              <Text value="Maxwell's Demon is You!" color="inherit" size="xl" />
-            </div>
-          </Link>
-
-          <Link href="#" className="group block">
-            <div className="text-zinc-500 text-sm mb-1">
-              <Text value="Jan 30, 2025" color="inherit" size="sm" />
-              <Text value=" · " color="inherit" size="sm" />
-              <Text value="Article" color="inherit" size="sm" />
-            </div>
-            <div className="text-purple-400 group-hover:text-purple-300 transition-colors text-xl">
-              <Text
-                value="First, know that everything you believe is wrong"
-                color="inherit"
-                size="xl"
-              />
-            </div>
-          </Link>
-        </div>
-      </main>
+    <div className="container mx-auto max-w-[1024px]">
+      <Stack gap={8}>
+        {items.map((item, index) => (
+          <TextLink
+            key={index}
+            href={'href' in item ? item.href : postDetailsPath(item.slug)}
+            className="group block"
+          >
+            <Stack gap={3}>
+              <Text value={item.title} size="lg" color="inherit" />
+              <Inline gap={1}>
+                <Text value={item.date.toLocaleDateString()} size="sm" color="light" />
+                <Text value="·" size="sm" color="light" />
+                <Text value={item.type} size="sm" color="light" />
+              </Inline>
+            </Stack>
+          </TextLink>
+        ))}
+      </Stack>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { cn } from '@/lib/cn'
+import { cn } from '@/lib/utils/cn'
 import { cva, VariantProps } from 'class-variance-authority'
 import { createElement, ReactNode } from 'react'
 import styles from './styles.module.css'
@@ -15,10 +15,10 @@ const textVariants = cva('inline-block', {
     },
     color: {
       inherit: '',
-      inverted: 'text-gray-800',
-      light: 'text-gray-500',
-      regular: 'text-white',
-      'inverted-light': 'text-gray-400',
+      inverted: 'text-zinc-800',
+      light: 'text-zinc-400',
+      regular: 'text-zinc-200',
+      'inverted-light': 'text-zinc-400',
     },
     nowrap: {
       true: 'whitespace-nowrap',
