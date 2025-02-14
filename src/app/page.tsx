@@ -10,7 +10,7 @@ const experiments = [
   {
     title: 'Neuroevolution',
     href: 'https://neuroevolution.defrex.com',
-    date: new Date('2025-02-14'),
+    date: new Date('2022-12-01'),
     type: 'experiment',
   },
 ]
