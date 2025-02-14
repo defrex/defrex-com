@@ -5,11 +5,18 @@ import { Stack } from '@/components/stack'
 import { TextLink } from '@/components/text-link'
 import { Text } from '@/components/text/text'
 import { postList } from '@/lib/post-list'
+import { ExternalLinkIcon } from 'lucide-react'
 
 const experiments = [
   {
+    title: 'Dicetribution',
+    href: 'https://dicestribution.com/',
+    date: new Date('2024-11-23'),
+    type: 'experiment',
+  },
+  {
     title: 'Neuroevolution',
-    href: 'https://neuroevolution.defrex.com',
+    href: 'https://neuroevolution.defrex.com/',
     date: new Date('2022-12-01'),
     type: 'experiment',
   },
@@ -32,7 +39,12 @@ export default function Page() {
           className="group block"
         >
           <Stack gap={3}>
-            <Text value={item.title} color="inherit" />
+            <Inline gap={1}>
+              <Text value={item.title} color="inherit" />
+              {'href' in item && !item.href.startsWith('/') ? (
+                <ExternalLinkIcon className="size-3" />
+              ) : null}
+            </Inline>
             <Inline gap={1}>
               <Text value={item.date.toLocaleDateString()} size="sm" color="light" />
               <Text value="·" size="sm" color="light" />
