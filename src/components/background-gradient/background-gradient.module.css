@@ -1,6 +1,6 @@
 @tailwind components;
 
-.backgroundGradientContainer {
+.backgroundGradient {
   /* Base colors */
   --bg-base: theme('colors.violet.950');
 

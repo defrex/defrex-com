@@ -9,9 +9,7 @@ interface BackgroundGradientProps {
 
 export function BackgroundGradient({ children, className }: BackgroundGradientProps) {
   return (
-    <div
-      className={cn(styles.backgroundGradientContainer, 'min-w-screen', 'min-h-screen', className)}
-    >
+    <div className={cn(styles.backgroundGradient, 'min-w-screen', 'min-h-screen', className)}>
       <div className={styles.baseGradient} />
 
       <div className={cn(styles.gradientLayer, styles.floatAnimation)}>
