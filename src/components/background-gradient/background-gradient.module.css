@@ -1,6 +1,6 @@
 @tailwind components;
 
-:root {
+:global(:root) {
   /* Base colors */
   --bg-base: theme('colors.violet.950');
 
