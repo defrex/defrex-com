@@ -22,6 +22,10 @@ const experiments = [
   },
 ]
 
+export const metadata = {
+  title: 'Aron Jones',
+}
+
 export default function Page() {
   const posts = postList().map((post) => ({
     ...post,

@@ -3,9 +3,14 @@ import { Stack } from '@/components/stack'
 import { Text } from '@/components/text/text'
 import { postDetails } from '@/lib/post-details'
 import { postList } from '@/lib/post-list'
+import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-export default async function PostDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+type PostDetailsPageProps = {
+  params: Promise<{ slug: string }>
+}
+
+export default async function PostDetailsPage({ params }: PostDetailsPageProps) {
   const { slug } = await params
   const post = postDetails(slug)
 
@@ -25,6 +30,15 @@ export default async function PostDetailsPage({ params }: { params: Promise<{ sl
       </Stack>
     </div>
   )
+}
+
+export async function generateMetadata({ params }: PostDetailsPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = postDetails(slug)
+
+  return {
+    title: `${post?.title ?? 'Post'} - Aron Jones`,
+  }
 }
 
 export async function generateStaticParams() {
