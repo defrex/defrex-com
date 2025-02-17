@@ -1,6 +1,7 @@
 import { Stack } from '@/components/stack'
 import { Text } from '@/components/text/text'
 import { postDetails } from '@/lib/post-details'
+import { postList } from '@/lib/post-list'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 
@@ -26,4 +27,11 @@ export default async function PostDetailsPage({ params }: { params: Promise<{ sl
       </Stack>
     </div>
   )
+}
+
+export async function generateStaticParams() {
+  const posts = postList()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
 }
