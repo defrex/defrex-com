@@ -12,13 +12,13 @@
   /* Blob colors */
   --blob-1: theme('colors.violet.600 / 30%');
   --blob-2: theme('colors.indigo.500 / 30%');
-  --blob-3: theme('colors.fuchsia.500 / 20%');
+  --blob-3: theme('colors.cyan.800 / 20%');
   --blob-4: theme('colors.violet.400 / 20%');
   --blob-5: theme('colors.indigo.600 / 20%');
   --blob-6: theme('colors.violet.500 / 20%');
 
   /* Radial gradient colors */
-  --radial-color: theme('colors.fuchsia.500 / 15%');
+  --radial-color: theme('colors.cyan.800 / 20%');
 
   /* Mesh gradient colors */
   --mesh-color-1: theme('colors.violet.500 / 10%');
@@ -146,16 +146,15 @@
     var(--mesh-color-2) 60%
   );
 }
-
 @keyframes float {
   0% {
     transform: translate(0px, 0px) rotate(0deg);
   }
   33% {
-    transform: translate(-100px, 100px) rotate(8deg);
+    transform: translate(-150px, 150px) rotate(12deg);
   }
   66% {
-    transform: translate(100px, -100px) rotate(-8deg);
+    transform: translate(150px, -150px) rotate(-12deg);
   }
   100% {
     transform: translate(0px, 0px) rotate(0deg);
@@ -167,10 +166,10 @@
     transform: translate(0px, 0px) rotate(0deg);
   }
   33% {
-    transform: translate(100px, -100px) rotate(-8deg);
+    transform: translate(150px, -150px) rotate(-12deg);
   }
   66% {
-    transform: translate(-100px, 100px) rotate(8deg);
+    transform: translate(-150px, 150px) rotate(12deg);
   }
   100% {
     transform: translate(0px, 0px) rotate(0deg);
@@ -180,15 +179,15 @@
 @keyframes pulseSlow {
   0% {
     opacity: 0.1;
-    transform: scale(0.85);
+    transform: scale(0.775);
   }
   50% {
     opacity: 0.9;
-    transform: scale(1.15);
+    transform: scale(1.225);
   }
   100% {
     opacity: 0.1;
-    transform: scale(0.85);
+    transform: scale(0.775);
   }
 }
 
