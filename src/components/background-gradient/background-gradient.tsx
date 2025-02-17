@@ -1,3 +1,4 @@
+import { ParticleCanvas } from '@/components/background-gradient/particle-canvas'
 import { cn } from '@/lib/utils/cn'
 import type { ReactNode } from 'react'
 import styles from './background-gradient.module.css'
@@ -11,6 +12,10 @@ export function BackgroundGradient({ children, className }: BackgroundGradientPr
   return (
     <div className={cn(styles.backgroundGradient, 'min-w-screen', 'min-h-screen', className)}>
       <div className={styles.baseGradient} />
+
+      <div className="absolute inset-0">
+        <ParticleCanvas className="h-full w-full" />
+      </div>
 
       <div className={cn(styles.gradientLayer, styles.floatAnimation)}>
         <div className={cn(styles.gradientBlob, styles.gradientBlob1)} />

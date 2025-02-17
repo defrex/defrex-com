@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               'container',
               'mx-auto',
               'max-w-[65ch]',
-              'bg-zinc-900/20',
+              'bg-zinc-900/30',
               'rounded-lg',
               'shadow-lg',
               'shadow-violet-800/30',
@@ -57,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Text as="h1" value="Aron Jones" size="xl" color="inherit" />
                 </Link>
 
-                <Inline gap={2}>
+                <Inline className="gap-2 sm:gap-4">
                   <a
                     href="https://github.com/defrex"
                     className="transition-colors text-violet-300 hover:text-violet-400"
