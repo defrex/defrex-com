@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: theme('colors.zinc.800');
-    --foreground: theme('colors.zinc.200');
+    --background: theme('colors.zinc.800 / 80%');
+    --foreground: theme('colors.zinc.50');
     --card: theme('colors.zinc.950');
     --card-foreground: theme('colors.zinc.50');
     --popover: theme('colors.zinc.950');
@@ -15,7 +15,7 @@
     --secondary: theme('colors.zinc.800');
     --secondary-foreground: theme('colors.zinc.50');
     --muted: theme('colors.zinc.800');
-    --muted-foreground: theme('colors.zinc.400');
+    --muted-foreground: theme('colors.zinc.300');
     --accent: theme('colors.zinc.800');
     --accent-foreground: theme('colors.zinc.50');
     --destructive: theme('colors.red.900');
@@ -23,9 +23,9 @@
     --border: theme('colors.zinc.800');
     --input: theme('colors.zinc.800');
     --ring: theme('colors.zinc.300');
-    --chart-1: theme('colors.blue.500');
+    --chart-1: theme('colors.amber.500');
     --chart-2: theme('colors.teal.600');
-    --chart-3: theme('colors.amber.500');
+    --chart-3: theme('colors.violet.500');
     --chart-4: theme('colors.purple.500');
     --chart-5: theme('colors.pink.500');
   }
