@@ -15,7 +15,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={cn(inter.className, 'min-h-screen', 'min-w-screen')}>
         <BackgroundGradient
-          className={cn('flex', 'flex-col', 'items-center', 'justify-center', 'h-full', 'w-full')}
+          className={cn(
+            'flex',
+            'flex-col',
+            'items-center',
+            'h-full',
+            'w-full',
+            'justify-start',
+            'sm:justify-center',
+          )}
         >
           <Stack
             gap={12}
@@ -28,11 +36,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               'shadow-lg',
               'shadow-violet-800/30',
               'p-8',
-              'my-8',
+              'my-0',
+              'min-h-screen',
+              'sm:my-8',
+              'sm:min-h-fit',
             )}
           >
             <header>
-              <Inline justify="between" align="top">
+              <div
+                className={cn(
+                  'flex',
+                  'flex-col',
+                  'gap-2',
+                  'sm:flex-row',
+                  'sm:items-start',
+                  'sm:justify-between',
+                )}
+              >
                 <Link href="/" className="transition-colors text-zinc-100 hover:text-violet-300">
                   <Text as="h1" value="Aron Jones" size="xl" color="inherit" />
                 </Link>
@@ -51,7 +71,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Text value="LinkedIn" color="inherit" />
                   </a>
                 </Inline>
-              </Inline>
+              </div>
             </header>
             {children}
           </Stack>
