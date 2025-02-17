@@ -1,6 +1,6 @@
 @tailwind components;
 
-:global(:root) {
+.backgroundGradientContainer {
   /* Base colors */
   --bg-base: theme('colors.violet.950');
 
@@ -23,9 +23,7 @@
   /* Mesh gradient colors */
   --mesh-color-1: theme('colors.violet.500 / 10%');
   --mesh-color-2: theme('colors.indigo.500 / 15%');
-}
 
-.backgroundGradientContainer {
   position: relative;
   overflow: hidden;
   background-color: var(--bg-base);
