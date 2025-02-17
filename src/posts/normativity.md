@@ -3,7 +3,7 @@ title: Normativity
 date: 2021-12-28T00:00:00.000Z
 ---
 
-This story starts within the human mind, but isn’t ultimately about humans. It’s about the organisms humans form when they work in groups. Because individual humans, despite what we may somethings think, aren’t so different from other animals. What’s unique about humans is what emerges when we form groups.
+This story starts within the human mind, but isn’t ultimately about humans. It’s about the organisms humans form when they work in groups. Because individual humans, despite what we may sometimes think, aren’t so different from other animals. What’s unique about humans is what emerges when we form groups.
 
 ### Mental Models
 

@@ -12,7 +12,7 @@ const experiments = [
     title: 'Dicetribution',
     href: 'https://dicestribution.com/',
     date: new Date('2024-11-23'),
-    type: 'experiment',
+    type: 'tool',
   },
   {
     title: 'Neuroevolution',
@@ -33,11 +33,7 @@ export default function Page() {
   return (
     <PageContainer>
       {items.map((item, index) => (
-        <TextLink
-          key={index}
-          href={'href' in item ? item.href : postDetailsPath(item.slug)}
-          className="group block"
-        >
+        <TextLink key={index} href={'href' in item ? item.href : postDetailsPath(item.slug)}>
           <Stack gap={3}>
             <Inline gap={1}>
               <Text value={item.title} color="inherit" />

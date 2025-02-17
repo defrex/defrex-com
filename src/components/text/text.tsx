@@ -15,10 +15,8 @@ const textVariants = cva('inline-block', {
     },
     color: {
       inherit: '',
-      inverted: 'text-zinc-800',
-      light: 'text-zinc-400',
-      regular: 'text-zinc-200',
-      'inverted-light': 'text-zinc-400',
+      light: 'text-zinc-300',
+      regular: 'text-zinc-50',
     },
     nowrap: {
       true: 'whitespace-nowrap',
@@ -78,7 +76,7 @@ export type TextProps = VariantProps<typeof textVariants> & {
 }
 
 export function textClassNames({ className, ...props }: Omit<TextProps, 'as' | 'value' | 'title'>) {
-  return cn(textVariants(props), className)
+  return cn(textVariants(props), 'inline', className)
 }
 
 export function Text({ as = 'span', value, title, ...props }: TextProps) {

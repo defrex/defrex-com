@@ -1,0 +1,215 @@
+@tailwind components;
+
+:root {
+  /* Base colors */
+  --bg-base: theme('colors.violet.950');
+
+  /* Gradient colors */
+  --gradient-start: theme('colors.violet.900');
+  --gradient-middle: theme('colors.violet.800');
+  --gradient-end: theme('colors.indigo.800');
+
+  /* Blob colors */
+  --blob-1: theme('colors.violet.600 / 30%');
+  --blob-2: theme('colors.indigo.500 / 30%');
+  --blob-3: theme('colors.fuchsia.500 / 20%');
+  --blob-4: theme('colors.violet.400 / 20%');
+  --blob-5: theme('colors.indigo.600 / 20%');
+  --blob-6: theme('colors.violet.500 / 20%');
+
+  /* Radial gradient colors */
+  --radial-color: theme('colors.fuchsia.500 / 15%');
+
+  /* Mesh gradient colors */
+  --mesh-color-1: theme('colors.violet.500 / 10%');
+  --mesh-color-2: theme('colors.indigo.500 / 15%');
+}
+
+.backgroundGradientContainer {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-base);
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.baseGradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image: linear-gradient(
+    to bottom right,
+    var(--gradient-start),
+    var(--gradient-middle),
+    var(--gradient-end)
+  );
+}
+
+.gradientLayer {
+  position: absolute;
+  opacity: 0.7;
+  transform: translateZ(0);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  will-change: transform;
+}
+
+.gradientBlob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+}
+
+.gradientBlob1 {
+  top: 30%;
+  left: 40%;
+  width: 50%;
+  height: 50%;
+  background-color: var(--blob-1);
+}
+
+.gradientBlob2 {
+  bottom: 35%;
+  right: 35%;
+  width: 45%;
+  height: 45%;
+  background-color: var(--blob-2);
+}
+
+.gradientBlob3 {
+  top: 45%;
+  left: 25%;
+  width: 40%;
+  height: 40%;
+  background-color: var(--blob-3);
+}
+
+.gradientBlob4 {
+  bottom: 30%;
+  right: 40%;
+  width: 35%;
+  height: 35%;
+  background-color: var(--blob-4);
+}
+
+.smallBlob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(80px);
+}
+
+.smallBlob1 {
+  top: 40%;
+  left: 45%;
+  width: 25%;
+  height: 25%;
+  background-color: var(--blob-5);
+}
+
+.smallBlob2 {
+  bottom: 45%;
+  right: 40%;
+  width: 20%;
+  height: 20%;
+  background-color: var(--blob-6);
+}
+
+.radialGradient {
+  position: absolute;
+  transform: translateZ(0);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  will-change: transform, opacity;
+  background: radial-gradient(circle at 50% 50%, var(--radial-color), transparent 50%);
+}
+
+.meshGradient {
+  position: absolute;
+  transform: translateZ(0);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  will-change: transform;
+  background: linear-gradient(
+    45deg,
+    var(--mesh-color-1) 0%,
+    transparent 40%,
+    var(--mesh-color-2) 60%
+  );
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  33% {
+    transform: translate(-100px, 100px) rotate(8deg);
+  }
+  66% {
+    transform: translate(100px, -100px) rotate(-8deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+@keyframes floatReverse {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+  33% {
+    transform: translate(100px, -100px) rotate(-8deg);
+  }
+  66% {
+    transform: translate(-100px, 100px) rotate(8deg);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg);
+  }
+}
+
+@keyframes pulseSlow {
+  0% {
+    opacity: 0.1;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(0.85);
+  }
+}
+
+.floatAnimation {
+  animation: float calc(1 * 5s) ease-in-out infinite;
+}
+
+.floatReverseAnimation {
+  animation: floatReverse calc(1.25 * 5s) ease-in-out infinite;
+}
+
+.pulseAnimation {
+  animation: pulseSlow calc(0.5 * 5s) ease-in-out infinite;
+}
+
+.fastFloat {
+  animation: float calc(0.75 * 5s) ease-in-out infinite;
+}
+
+.meshAnimation {
+  animation: float calc(1.5 * 5s) linear infinite;
+}

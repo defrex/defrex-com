@@ -16,8 +16,8 @@ export function TextLink({ href, text, children, className, textProps }: TextLin
       href={href}
       className={cn(
         className,
-        'text-purple-400',
-        'hover:text-purple-300',
+        'text-purple-300',
+        'hover:text-purple-400',
         'transition-colors',
         'duration-100',
       )}

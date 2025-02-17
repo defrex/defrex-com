@@ -1,3 +1,4 @@
+import { BackgroundGradient } from '@/components/background-gradient/background-gradient'
 import { Inline } from '@/components/inline'
 import { Stack } from '@/components/stack'
 import { Text } from '@/components/text/text'
@@ -12,43 +13,49 @@ const inter = Inter({ subsets: ['latin'] })
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          inter.className,
-          'min-h-screen',
-          'border-y-4',
-          'border-purple-400',
-          'bg-background',
-          'text-foreground',
-          'py-4',
-        )}
-      >
-        <Stack gap={12}>
-          <header className="container mx-auto max-w-[1024px]">
-            <Inline className="py-4" justify="between">
-              <Link href="/" className="transition-colors text-zinc-100 hover:text-purple-400">
-                <Text as="h1" value="Aron Jones" size="xl" color="inherit" />
-              </Link>
+      <body className={cn(inter.className, 'min-h-screen', 'min-w-screen')}>
+        <BackgroundGradient
+          className={cn('flex', 'flex-col', 'items-center', 'justify-center', 'h-full', 'w-full')}
+        >
+          <Stack
+            gap={12}
+            className={cn(
+              'container',
+              'mx-auto',
+              'max-w-[65ch]',
+              'bg-zinc-900/20',
+              'rounded-lg',
+              'shadow-lg',
+              'shadow-violet-800/30',
+              'p-8',
+              'my-8',
+            )}
+          >
+            <header>
+              <Inline justify="between" align="top">
+                <Link href="/" className="transition-colors text-zinc-100 hover:text-violet-300">
+                  <Text as="h1" value="Aron Jones" size="xl" color="inherit" />
+                </Link>
 
-              <Inline justify="between">
-                <a
-                  href="https://github.com/defrex"
-                  className="transition-colors hover:text-purple-400"
-                >
-                  <Text value="GitHub" color="inherit" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/aronjones/"
-                  className="transition-colors hover:text-purple-400"
-                >
-                  <Text value="LinkedIn" color="inherit" />
-                </a>
+                <Inline gap={2}>
+                  <a
+                    href="https://github.com/defrex"
+                    className="transition-colors text-violet-300 hover:text-violet-400"
+                  >
+                    <Text value="GitHub" color="inherit" />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/aronjones/"
+                    className="transition-colors text-violet-300 hover:text-violet-400"
+                  >
+                    <Text value="LinkedIn" color="inherit" />
+                  </a>
+                </Inline>
               </Inline>
-            </Inline>
-          </header>
-
-          {children}
-        </Stack>
+            </header>
+            {children}
+          </Stack>
+        </BackgroundGradient>
       </body>
     </html>
   )
