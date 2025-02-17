@@ -3,9 +3,9 @@ title: Burn Damage
 date: 2025-02-17T16:00:00-05:00
 ---
 
-Recently I've been playing a lot of The Bazaar, and thinking about Burn.
+Recently I've been playing a lot of The Bazaar, and thinking about burn. Burn is a common form of damage over time in video games generally, so hopefully this analysis generalizes.
 
-Burn is a common form of damage over time in video games. We'll define it here as a number which stacks when applied, and on every tick it applies damage equal to the current stacks size, then reduces the stack by one.
+We'll define burn here as a number which stacks when applied, and on every tick it applies damage equal to the current stacks size, then reduces the stack by one.
 
 ### Damage from Burn
 
@@ -427,7 +427,7 @@ If we assume 5 stacks of burn, the damage would be 5 + 4 + 3 + 2 + 1 = 15. This 
 
 Above we can see how damage scales super-linearly as we apply more burn.
 
-This is helpful to know if you're only applying burn once, of if the burn ticks away between applications.
+This is helpful to know if you're only applying burn once.
 
 ### Incremental Damage from New Burn
 
@@ -851,13 +851,13 @@ That's a very helpful heuristic for understanding burn damage!
 
 ### Burn Saturation
 
-So far we've avoided thinking about Max HP. 100 Burn will deal 5,050 damage, but not if the enemy's Max HP is 1000!
+So far we've avoided thinking about Max HP. 100 Burn will deal 5,050 damage, but not if the enemy's Max HP is 1,000!
 
-Let's take a look at what happens to the incremental damage with a max of 1000.
+Let's take a look at what happens to the incremental damage with a max of 1,000.
 
 ```json [LineChart]
 {
-  "title": "Incremental Damage from 1 Burn (1000 Max HP)",
+  "title": "Incremental Damage from 1 Burn (1,000 Max HP)",
   "xKey": "currentBurn",
   "xLabel": "Current Burn",
   "yKey": "incrementalDamage",
@@ -2091,7 +2091,7 @@ Once we've reached the saturation point, incremental burn will speed up the time
 
 ```json [LineChart]
 {
-  "title": "Time to Lethal (1000 Max HP)",
+  "title": "Time to Lethal (1,000 Max HP)",
   "xKey": "burn",
   "xLabel": "Burn",
   "yKey": "survivalTime",
