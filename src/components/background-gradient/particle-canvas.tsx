@@ -11,6 +11,47 @@ interface Particle {
   alpha: number
 }
 
+class Grid {
+  cells: Map<string, Particle[]> = new Map()
+  cellSize: number
+
+  constructor(cellSize: number) {
+    this.cellSize = cellSize
+  }
+
+  getCell(x: number, y: number): string {
+    return `${Math.floor(x / this.cellSize)},${Math.floor(y / this.cellSize)}`
+  }
+
+  add(particle: Particle) {
+    const cell = this.getCell(particle.x, particle.y)
+    if (!this.cells.has(cell)) {
+      this.cells.set(cell, [])
+    }
+    this.cells.get(cell)?.push(particle)
+  }
+
+  getNearbyParticles(particle: Particle, radius: number): Particle[] {
+    const nearby: Particle[] = []
+    const cellX = Math.floor(particle.x / this.cellSize)
+    const cellY = Math.floor(particle.y / this.cellSize)
+    const cellRadius = Math.ceil(radius / this.cellSize)
+
+    for (let x = -cellRadius; x <= cellRadius; x++) {
+      for (let y = -cellRadius; y <= cellRadius; y++) {
+        const cell = `${cellX + x},${cellY + y}`
+        const particles = this.cells.get(cell) || []
+        nearby.push(...particles)
+      }
+    }
+    return nearby
+  }
+
+  clear() {
+    this.cells.clear()
+  }
+}
+
 interface ParticleCanvasProps {
   className?: string
   // Particle appearance
@@ -60,7 +101,7 @@ const defaultProps = {
   drawConnections: true,
   connectionDistance: 150,
   connectionOpacity: 0.2,
-  fpsLimit: 60,
+  fpsLimit: 30,
 }
 
 export function ParticleCanvas({ className, ...props }: ParticleCanvasProps) {
@@ -78,7 +119,7 @@ export function ParticleCanvas({ className, ...props }: ParticleCanvasProps) {
 
     const resizeCanvas = () => {
       const rect = container.getBoundingClientRect()
-      const devicePixelRatio = window.devicePixelRatio || 1
+      const devicePixelRatio = Math.min(window.devicePixelRatio || 1, 2)
 
       canvas.width = rect.width * devicePixelRatio
       canvas.height = rect.height * devicePixelRatio
@@ -95,13 +136,13 @@ export function ParticleCanvas({ className, ...props }: ParticleCanvasProps) {
     resizeObserver.observe(container)
 
     const particles: Particle[] = []
+    const grid = new Grid(options.connectionDistance)
 
     function initializeParticles() {
       particles.length = 0
       if (!container) return
       const rect = container.getBoundingClientRect()
 
-      // Calculate particle count based on container area
       const area = rect.width * rect.height
       const particleCount = Math.round((area / 10000) * options.particleDensity)
 
@@ -123,10 +164,11 @@ export function ParticleCanvas({ className, ...props }: ParticleCanvasProps) {
     let lastDrawTime = 0
     let lastTime = 0
     const frameInterval = 1000 / options.fpsLimit
+    let animationFrameId: number
 
     function animate(currentTime: number) {
       if (currentTime - lastDrawTime < frameInterval) {
-        requestAnimationFrame(animate)
+        animationFrameId = requestAnimationFrame(animate)
         return
       }
       lastDrawTime = currentTime
@@ -139,10 +181,19 @@ export function ParticleCanvas({ className, ...props }: ParticleCanvasProps) {
       const rect = container.getBoundingClientRect()
       ctx.clearRect(0, 0, rect.width, rect.height)
 
+      grid.clear()
+      for (const particle of particles) {
+        grid.add(particle)
+      }
+
       if (options.drawConnections) {
         for (let i = 0; i < particles.length; i++) {
           const particle = particles[i]
-          for (const otherParticle of particles.slice(i + 1)) {
+          const nearbyParticles = grid.getNearbyParticles(particle, options.connectionDistance)
+
+          for (const otherParticle of nearbyParticles) {
+            if (particle === otherParticle) continue
+
             const dx = particle.x - otherParticle.x
             const dy = particle.y - otherParticle.y
             const distance = Math.sqrt(dx * dx + dy * dy)
@@ -227,13 +278,14 @@ export function ParticleCanvas({ className, ...props }: ParticleCanvasProps) {
         ctx.fill()
       }
 
-      requestAnimationFrame(animate)
+      animationFrameId = requestAnimationFrame(animate)
     }
 
     animate(0)
 
     return () => {
       resizeObserver.disconnect()
+      cancelAnimationFrame(animationFrameId)
     }
   }, [props])
 
