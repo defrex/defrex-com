@@ -10,7 +10,17 @@ interface BackgroundGradientProps {
 
 export function BackgroundGradient({ children, className }: BackgroundGradientProps) {
   return (
-    <div className={cn(styles.backgroundGradient, 'min-w-screen', 'min-h-screen', className)}>
+    <div
+      className={cn(
+        styles.backgroundGradient,
+        'h-screen',
+        'w-screen',
+        'absolute',
+        'top-0',
+        'left-0',
+        className,
+      )}
+    >
       <div className={styles.baseGradient} />
 
       <div className="absolute inset-0">
@@ -35,7 +45,9 @@ export function BackgroundGradient({ children, className }: BackgroundGradientPr
         <div className={cn(styles.smallBlob, styles.smallBlob2)} />
       </div>
 
-      <div className={cn(styles.content, 'min-h-full', 'min-w-full')}>{children}</div>
+      <div className={cn(styles.content, 'h-screen', 'w-screen', 'overflow-y-auto')}>
+        {children}
+      </div>
     </div>
   )
 }
