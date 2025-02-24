@@ -49,9 +49,21 @@ interface StackProps extends Omit<VariantProps<typeof stackVariants>, 'gap'> {
   children: ReactNode
   className?: string
   gap?: number // explicitly type gap to avoid null
+  ref?: React.Ref<HTMLDivElement>
+  style?: React.CSSProperties
 }
 
-export function Stack({ align, justify, gap = 2, grow, divide, children, className }: StackProps) {
+export function Stack({
+  align,
+  justify,
+  gap = 2,
+  grow,
+  divide,
+  children,
+  className,
+  ref,
+  style,
+}: StackProps) {
   if (divide) {
     children = Children.map(children, (child) => (
       <div className={cn(`py-${gap / 2} first:pt-0 last:pb-0`)}>{child}</div>
@@ -59,7 +71,11 @@ export function Stack({ align, justify, gap = 2, grow, divide, children, classNa
   }
 
   return (
-    <div className={cn(stackVariants({ align, justify, gap, grow, divide }), className)}>
+    <div
+      className={cn(stackVariants({ align, justify, gap, grow, divide }), className)}
+      ref={ref}
+      style={style}
+    >
       {children}
     </div>
   )

@@ -13,7 +13,7 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { BarChart2, TableIcon } from 'lucide-react'
-import { useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import { CartesianGrid, Line, LineChart as RechartsLineChart, XAxis, YAxis } from 'recharts'
 
 interface DataPoint {
@@ -40,32 +40,48 @@ export default function LineChart({
   className = '',
 }: LineChartProps) {
   const [isChartView, setIsChartView] = useState(true)
+  const [containerHeight, setContainerHeight] = useState<number | null>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   // Default to capitalized key names if no labels provided
   const displayXLabel = xLabel ?? xKey.charAt(0).toUpperCase() + xKey.slice(1)
   const displayYLabel = yLabel ?? yKey.charAt(0).toUpperCase() + yKey.slice(1)
 
-  if (!data?.length) {
-    return (
-      <div className="flex items-center justify-center p-8 text-muted-foreground">
-        <Text value="No data available" />
-      </div>
-    )
-  }
+  const handleChartView = useCallback(() => {
+    setContainerHeight(null)
+    setIsChartView(true)
+  }, [])
 
-  return (
-    <Stack gap={4} className={`w-full h-[400px] overflow-auto ${className}`}>
+  const handleTableView = useCallback(() => {
+    if (containerRef.current) {
+      const height = containerRef.current.scrollHeight
+      setContainerHeight(height)
+    }
+    setIsChartView(false)
+  }, [])
+
+  return !data?.length ? (
+    <div className="flex items-center justify-center p-8 text-muted-foreground">
+      <Text value="No data available" />
+    </div>
+  ) : (
+    <Stack
+      gap={4}
+      ref={containerRef}
+      className={`w-full overflow-auto ${className}`}
+      style={{ height: containerHeight ? `${containerHeight}px` : 'auto' }}
+    >
       <Inline className="justify-between">
         <Text value={title} />
         <Inline gap={2} className="cursor-pointer">
           <div
-            onClick={() => setIsChartView(true)}
+            onClick={handleChartView}
             className={`p-1 rounded ${isChartView ? 'text-primary' : 'text-muted-foreground hover:text-purple-200'}`}
           >
             <BarChart2 size={20} />
           </div>
           <div
-            onClick={() => setIsChartView(false)}
+            onClick={handleTableView}
             className={`p-1 rounded ${!isChartView ? 'text-primary' : 'text-muted-foreground hover:text-purple-200'}`}
           >
             <TableIcon size={20} />
