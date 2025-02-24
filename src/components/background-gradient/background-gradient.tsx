@@ -18,7 +18,6 @@ export function BackgroundGradient({ children, className }: BackgroundGradientPr
         'absolute',
         'top-0',
         'left-0',
-        className,
       )}
     >
       <div className={styles.baseGradient} />
@@ -45,7 +44,7 @@ export function BackgroundGradient({ children, className }: BackgroundGradientPr
         <div className={cn(styles.smallBlob, styles.smallBlob2)} />
       </div>
 
-      <div className={cn(styles.content, 'h-screen', 'w-screen', 'overflow-y-auto')}>
+      <div className={cn(styles.content, 'h-screen', 'w-screen', 'overflow-y-auto', className)}>
         {children}
       </div>
     </div>
