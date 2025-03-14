@@ -36,8 +36,47 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
   const { slug } = await params
   const post = postDetails(slug)
 
+  if (!post) {
+    return {
+      title: 'Post not found - Aron Jones',
+    }
+  }
+
+  // Get first paragraph for description (without any markdown components)
+  const firstParagraph = post.content
+    .split('\n\n')
+    .find(paragraph => 
+      paragraph.trim() !== '' && 
+      !paragraph.startsWith('#') && 
+      !paragraph.startsWith('```')
+    ) || ''
+
   return {
-    title: `${post?.title ?? 'Post'} - Aron Jones`,
+    title: `${post.title} - Aron Jones`,
+    description: firstParagraph.slice(0, 160),
+    openGraph: {
+      title: post.title,
+      description: firstParagraph.slice(0, 160),
+      type: 'article',
+      publishedTime: post.date.toISOString(),
+      authors: ['Aron Jones'],
+      url: `https://defrex.com/posts/${post.slug}`,
+      siteName: 'Aron Jones',
+      images: [
+        {
+          url: `https://defrex.com/api/og?title=${encodeURIComponent(post.title)}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: firstParagraph.slice(0, 160),
+      images: [`https://defrex.com/api/og?title=${encodeURIComponent(post.title)}`],
+    },
   }
 }
 
