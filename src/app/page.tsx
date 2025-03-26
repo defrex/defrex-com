@@ -5,6 +5,7 @@ import { Stack } from '@/components/stack'
 import { TextLink } from '@/components/text-link'
 import { Text } from '@/components/text/text'
 import { postList } from '@/lib/post-list'
+import { generateDefaultMetadata } from '@/lib/utils/metadata'
 import { ExternalLinkIcon } from 'lucide-react'
 
 const experiments = [
@@ -28,9 +29,10 @@ const experiments = [
   },
 ]
 
-export const metadata = {
+export const metadata = generateDefaultMetadata({
   title: 'Aron Jones',
-}
+  description: 'Personal site and blog of Aron Jones, software engineer and technologist.',
+})
 
 export default function Page() {
   const posts = postList().map((post) => ({

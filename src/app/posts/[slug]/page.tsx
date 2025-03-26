@@ -3,6 +3,7 @@ import { Stack } from '@/components/stack'
 import { Text } from '@/components/text/text'
 import { postDetails } from '@/lib/post-details'
 import { postList } from '@/lib/post-list'
+import { generateDefaultMetadata } from '@/lib/utils/metadata'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -37,24 +38,10 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
   const post = postDetails(slug)
 
   if (!post) {
-    return {
+    return generateDefaultMetadata({
       title: 'Post not found - Aron Jones',
-    }
+    })
   }
-
-  const domain =
-    process.env.VERCEL_URL ??
-    process.env.VERCEL_BRANCH_URL ??
-    process.env.VERCEL_PROJECT_PRODUCTION_URL
-
-  const baseUrl = domain ? `https://${domain}` : 'http://localhost:3000'
-
-  console.log({
-    VERCEL_URL: process.env.VERCEL_URL,
-    VERCEL_BRANCH_URL: process.env.VERCEL_BRANCH_URL,
-    VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
-    baseUrl,
-  })
 
   // Get first paragraph for description (without any markdown components)
   const firstParagraph =
@@ -64,34 +51,21 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
         (paragraph) =>
           paragraph.trim() !== '' && !paragraph.startsWith('#') && !paragraph.startsWith('```'),
       ) || ''
+  
+  const description = firstParagraph.slice(0, 160)
 
-  return {
+  return generateDefaultMetadata({
     title: `${post.title} - Aron Jones`,
-    description: firstParagraph.slice(0, 160),
+    description,
+    ogTitle: post.title,
+    ogDescription: description,
+    ogType: 'article',
+    ogPath: `/posts/${post.slug}`,
     openGraph: {
-      title: post.title,
-      description: firstParagraph.slice(0, 160),
-      type: 'article',
       publishedTime: post.date.toISOString(),
       authors: ['Aron Jones'],
-      url: `${baseUrl}/posts/${post.slug}`,
-      siteName: 'Aron Jones',
-      images: [
-        {
-          url: `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
-          width: 1200,
-          height: 630,
-          alt: post.title,
-        },
-      ],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: firstParagraph.slice(0, 160),
-      images: [`${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`],
-    },
-  }
+    }
+  })
 }
 
 export async function generateStaticParams() {
