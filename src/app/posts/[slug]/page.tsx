@@ -10,6 +10,11 @@ type PostDetailsPageProps = {
   params: Promise<{ slug: string }>
 }
 
+const baseUrl =
+  process.env.VERCEL_BRANCH_URL ??
+  process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+  'http://localhost:3000'
+
 export default async function PostDetailsPage({ params }: PostDetailsPageProps) {
   const { slug } = await params
   const post = postDetails(slug)
@@ -43,13 +48,13 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
   }
 
   // Get first paragraph for description (without any markdown components)
-  const firstParagraph = post.content
-    .split('\n\n')
-    .find(paragraph => 
-      paragraph.trim() !== '' && 
-      !paragraph.startsWith('#') && 
-      !paragraph.startsWith('```')
-    ) || ''
+  const firstParagraph =
+    post.content
+      .split('\n\n')
+      .find(
+        (paragraph) =>
+          paragraph.trim() !== '' && !paragraph.startsWith('#') && !paragraph.startsWith('```'),
+      ) || ''
 
   return {
     title: `${post.title} - Aron Jones`,
@@ -60,11 +65,11 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
       type: 'article',
       publishedTime: post.date.toISOString(),
       authors: ['Aron Jones'],
-      url: `https://defrex.com/posts/${post.slug}`,
+      url: `${baseUrl}/posts/${post.slug}`,
       siteName: 'Aron Jones',
       images: [
         {
-          url: `https://defrex.com/api/og?title=${encodeURIComponent(post.title)}`,
+          url: `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
           width: 1200,
           height: 630,
           alt: post.title,
@@ -75,7 +80,7 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
       card: 'summary_large_image',
       title: post.title,
       description: firstParagraph.slice(0, 160),
-      images: [`https://defrex.com/api/og?title=${encodeURIComponent(post.title)}`],
+      images: [`${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`],
     },
   }
 }
