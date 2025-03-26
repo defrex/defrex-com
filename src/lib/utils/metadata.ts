@@ -32,7 +32,7 @@ export function generateDefaultMetadata({
   ogImage?: string
   ogType?: 'website' | 'article'
   ogPath?: string
-  openGraph?: Record<string, any>
+  openGraph?: Record<string, unknown>
 }): Metadata {
   const baseUrl = getBaseUrl()
   const fullUrl = `${baseUrl}${ogPath}`
