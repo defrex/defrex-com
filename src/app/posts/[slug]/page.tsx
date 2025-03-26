@@ -42,11 +42,12 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
     }
   }
 
-  const baseUrl =
+  const domain =
     process.env.VERCEL_URL ??
     process.env.VERCEL_BRANCH_URL ??
-    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
-    'http://localhost:3000'
+    process.env.VERCEL_PROJECT_PRODUCTION_URL
+
+  const baseUrl = domain ? `https://${domain}` : 'http://localhost:3000'
 
   console.log({
     VERCEL_URL: process.env.VERCEL_URL,
