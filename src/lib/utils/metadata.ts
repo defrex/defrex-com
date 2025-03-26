@@ -8,14 +8,14 @@ export function getBaseUrl(): string {
     process.env.VERCEL_URL ??
     process.env.VERCEL_BRANCH_URL ??
     process.env.VERCEL_PROJECT_PRODUCTION_URL
-  
+
   return domain ? `https://${domain}` : 'http://localhost:3000'
 }
 
 /**
  * Generate metadata for pages with sensible defaults
  */
-export function generateDefaultMetadata({ 
+export function generateDefaultMetadata({
   title,
   description = 'Personal site and blog of Aron Jones, software engineer and technologist.',
   ogTitle,
@@ -36,9 +36,10 @@ export function generateDefaultMetadata({
 }): Metadata {
   const baseUrl = getBaseUrl()
   const fullUrl = `${baseUrl}${ogPath}`
-  
+
   // Use provided values or fallback to defaults
-  const metaOgTitle = ogTitle || (title === 'Aron Jones' ? 'Technologist & Natural Philosopher' : title)
+  const metaOgTitle =
+    ogTitle || (title === 'Aron Jones' ? 'Technologist & Natural Philosopher' : title)
   const metaOgDescription = ogDescription || description
   const metaOgImage = ogImage || `${baseUrl}/api/og?title=${encodeURIComponent(metaOgTitle)}`
 
