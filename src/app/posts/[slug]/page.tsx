@@ -10,11 +10,6 @@ type PostDetailsPageProps = {
   params: Promise<{ slug: string }>
 }
 
-const baseUrl =
-  process.env.VERCEL_BRANCH_URL ??
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ??
-  'http://localhost:3000'
-
 export default async function PostDetailsPage({ params }: PostDetailsPageProps) {
   const { slug } = await params
   const post = postDetails(slug)
@@ -46,6 +41,19 @@ export async function generateMetadata({ params }: PostDetailsPageProps): Promis
       title: 'Post not found - Aron Jones',
     }
   }
+
+  const baseUrl =
+    process.env.VERCEL_URL ??
+    process.env.VERCEL_BRANCH_URL ??
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ??
+    'http://localhost:3000'
+
+  console.log({
+    VERCEL_URL: process.env.VERCEL_URL,
+    VERCEL_BRANCH_URL: process.env.VERCEL_BRANCH_URL,
+    VERCEL_PROJECT_PRODUCTION_URL: process.env.VERCEL_PROJECT_PRODUCTION_URL,
+    baseUrl,
+  })
 
   // Get first paragraph for description (without any markdown components)
   const firstParagraph =
