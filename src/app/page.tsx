@@ -12,7 +12,7 @@ const experiments = [
   {
     title: 'Abiogenesis',
     href: 'https://abiogenesis.fun/',
-    date: new Date('2025-06-06'),
+    date: new Date('2024-08-30'),
     type: 'Experiment',
   },
   {
