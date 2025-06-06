@@ -39,6 +39,12 @@ const experiments = [
   },
 ]
 
+const typeColors: Partial<Record<string, string>> = {
+  Article: 'text-indigo-300',
+  Experiment: 'text-emerald-300',
+  Tool: 'text-amber-200',
+}
+
 export const metadata = generateDefaultMetadata({
   title: 'Aron Jones',
   description: 'Personal site and blog of Aron Jones, software engineer and technologist.',
@@ -69,9 +75,15 @@ export default function Page() {
       {items.map((item, index) => (
         <TextLink key={index} href={'href' in item ? item.href : postDetailsPath(item.slug)}>
           <Stack gap={3}>
-            {/* <div className="border border-neutral-400 rounded py-px px-1">
-            </div> */}
-            <Text value={item.type} size="sm" color="light" />
+            <Inline gap={1}>
+              <Text value={item.date.toLocaleDateString()} size="sm" color="light" />
+              <Text value="·" size="sm" color="light" />
+              <Text
+                value={item.type}
+                size="sm"
+                className={typeColors[item.type] ?? 'text-gray-300'}
+              />
+            </Inline>
             <Inline gap={1}>
               <Text value={item.title} color="inherit" />
               {'href' in item && !item.href.startsWith('/') ? (
@@ -81,10 +93,6 @@ export default function Page() {
             {'description' in item && item.description ? (
               <Text value={item.description} size="sm" color="light" />
             ) : null}
-            <Inline gap={1}>
-              <Text value={item.date.toLocaleDateString()} size="sm" />
-              {/* <Text value="·" size="sm" color="light" /> */}
-            </Inline>
           </Stack>
         </TextLink>
       ))}
