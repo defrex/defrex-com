@@ -15,7 +15,7 @@ Reality is complex. Quantum mechanics implies that, at the lowest levels, realit
 
 For example, it's not precisely true that the coffee I'm drinking has cooled to room temperature. If you had perfect knowledge of the position and momentum of all the molecules in my coffee, you would find none of them have a temperature at all. The atoms are banging into one another, slowly transferring the momentum from some of the fast atoms to some of the slow atoms until, on average, no more momentum is going from coffee to air than from air to coffee.
 
-Even that description is untrue, somewhat. The molecules don't really "bang into one another." In fact, the atom in each molecule perturbs the electron field allowing only certain configurations of electrons. The electrons, when they get close to one another, interact according to Feynman's path integral formulation. They probabilistically exchange energy, jumping from one stable configuration to another, typically absorbing or emitting a photon on the process.
+Even that description is untrue, somewhat. The molecules don't really "bang into one another." In fact, the electrons in each molecule are subject to the Pauli exclusion principle. This means two identical electrons can't occupy the same quantum state, and instead they will transfer energy to one another.
 
 Those are each useful descriptions in our human minds, but they omit a massive amount of detail, and only roughly approximate what's actually happening.
 
