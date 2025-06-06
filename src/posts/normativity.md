@@ -15,7 +15,7 @@ This is enough neuro theory for our purposes here, but I recommend A Thousand Br
 
 ### Frames
 
-Speaking of frames of reference, let’s talk about communication. In Claud Shannon’s A Mathematical Theory of Communication, we learn that communication requires information to be encoded by the sender, copied, and then decoded by the recipient.
+Speaking of frames of reference, let’s talk about communication. In Claude Shannon’s A Mathematical Theory of Communication, we learn that communication requires information to be encoded by the sender, copied, and then decoded by the recipient.
 
 When we encode information derived from mental models, those models become a frame of reference. In order to subsequently decode the information, the recipient must, to some degree, adopt the frame of reference of the sender.
 
