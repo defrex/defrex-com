@@ -1,3 +1,7 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
 # defrex-com Development Guide
 
 ## Build & Development Commands
@@ -16,8 +20,36 @@
 - **Error Handling**: Use TypeScript to avoid runtime errors, throw when necessary
 - **Testing**: Use Bun test framework with `describe`/`test`/`expect` pattern
 
-## Project Structure
-- `/src/app`: Next.js app router pages
-- `/src/components`: Reusable UI components
-- `/src/lib`: Utilities and shared code
-- `/src/posts`: Markdown content
+## Architecture Overview
+
+### Blog System
+The blog uses a custom markdown-based content system:
+- Posts are stored as markdown files in `/src/posts/`
+- Dynamic routing via `/app/posts/[slug]/page.tsx`
+- Custom markdown renderer (`/src/components/markdown-renderer.tsx`) supports embedding React components using JSON blocks:
+  ```markdown
+  ```json [ComponentName]
+  { "prop": "value" }
+  ```
+  ```
+- Post metadata extracted via gray-matter frontmatter
+- OG images generated dynamically via `/app/api/og/route.tsx`
+
+### Component Architecture
+- **UI Components**: Using shadcn/ui setup (configured in `components.json`) with Radix UI primitives
+- **Layout Components**: Stack and Inline components for consistent spacing
+- **Text Component**: Custom typography system with predefined variants
+- **Background**: Particle animation system in `/src/components/background-gradient/`
+
+### Data Visualization
+Multiple charting libraries are integrated:
+- recharts (primary)
+- victory
+- reaflow
+Custom LineChart component provides a consistent interface
+
+### Styling System
+- Dark theme by default using zinc color palette
+- CSS variables defined in globals.css for theming
+- Component-specific styles use CSS modules when needed
+- Always use `cn()` utility from `/src/lib/utils/cn.ts` for conditional classes
