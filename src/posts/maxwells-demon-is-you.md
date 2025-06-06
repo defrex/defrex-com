@@ -13,7 +13,7 @@ Now imagine a little demon sitting on the gate. It watches the particles, openin
 
 It seems like this system violates The Second Law.
 
-![Maxwell's Demon](/img/maxwells-deamon-is-you/maxwells_demon.png)
+![Maxwell's Demon](/img/maxwells-demon-is-you/maxwells_demon.png)
 
 ### Maxwell's Demon's Brain
 
