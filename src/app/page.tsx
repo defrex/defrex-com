@@ -10,6 +10,13 @@ import { ExternalLinkIcon } from 'lucide-react'
 
 const experiments = [
   {
+    title: 'Vizier',
+    href: 'https://vizier.so/',
+    date: new Date('2025-08-01'),
+    type: 'Tool',
+    description: 'Agentic business intelligence',
+  },
+  {
     title: 'Abiogenesis.fun',
     href: 'https://abiogenesis.fun/',
     date: new Date('2024-08-30'),
