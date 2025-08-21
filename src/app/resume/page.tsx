@@ -2,7 +2,6 @@ import { Stack } from '@/components/stack'
 import { Text } from '@/components/text/text'
 import { generateDefaultMetadata } from '@/lib/utils/metadata'
 import styles from './page.module.css'
-import { cn } from '@/lib/utils/cn'
 
 export const metadata = generateDefaultMetadata({
   title: 'Resume - Aron Jones',

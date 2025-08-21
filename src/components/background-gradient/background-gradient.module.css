@@ -1,28 +1,26 @@
-@tailwind components;
-
 .backgroundGradient {
   /* Base colors */
-  --bg-base: theme('colors.violet.950');
+  --bg-base: var(--color-violet-950);
 
   /* Gradient colors */
-  --gradient-start: theme('colors.violet.900');
-  --gradient-middle: theme('colors.violet.800');
-  --gradient-end: theme('colors.indigo.800');
+  --gradient-start: var(--color-violet-900);
+  --gradient-middle: var(--color-violet-800);
+  --gradient-end: var(--color-indigo-800);
 
   /* Blob colors */
-  --blob-1: theme('colors.violet.600 / 30%');
-  --blob-2: theme('colors.indigo.500 / 30%');
-  --blob-3: theme('colors.cyan.800 / 20%');
-  --blob-4: theme('colors.violet.400 / 20%');
-  --blob-5: theme('colors.indigo.600 / 20%');
-  --blob-6: theme('colors.violet.500 / 20%');
+  --blob-1: color-mix(in srgb, var(--color-violet-600) 30%, transparent);
+  --blob-2: color-mix(in srgb, var(--color-indigo-500) 30%, transparent);
+  --blob-3: color-mix(in srgb, var(--color-cyan-800) 20%, transparent);
+  --blob-4: color-mix(in srgb, var(--color-violet-400) 20%, transparent);
+  --blob-5: color-mix(in srgb, var(--color-indigo-600) 20%, transparent);
+  --blob-6: color-mix(in srgb, var(--color-violet-500) 20%, transparent);
 
   /* Radial gradient colors */
-  --radial-color: theme('colors.cyan.800 / 20%');
+  --radial-color: color-mix(in srgb, var(--color-cyan-800) 20%, transparent);
 
   /* Mesh gradient colors */
-  --mesh-color-1: theme('colors.violet.500 / 10%');
-  --mesh-color-2: theme('colors.indigo.500 / 15%');
+  --mesh-color-1: color-mix(in srgb, var(--color-violet-500) 10%, transparent);
+  --mesh-color-2: color-mix(in srgb, var(--color-indigo-500) 15%, transparent);
 
   position: relative;
   overflow: hidden;
@@ -34,7 +32,7 @@
   z-index: 10;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .baseGradient {

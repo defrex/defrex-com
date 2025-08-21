@@ -66,7 +66,7 @@ const ChartContainer = React.forwardRef<
           "[&_.recharts-sector[stroke='#fff']]:stroke-transparent",
           '[&_.recharts-sector]:outline-none',
           '[&_.recharts-surface]:outline-none',
-          className
+          className,
         )}
         {...props}
       >
@@ -188,7 +188,7 @@ const ChartTooltipContent = React.forwardRef<
           'py-1.5',
           'text-xs',
           'shadow-xl',
-          className
+          className,
         )}
       >
         {!nestLabel ? tooltipLabel : null}
@@ -210,7 +210,7 @@ const ChartTooltipContent = React.forwardRef<
                   '[&>svg]:h-2.5',
                   '[&>svg]:w-2.5',
                   '[&>svg]:text-muted-foreground',
-                  indicator === 'dot' && 'items-center'
+                  indicator === 'dot' && 'items-center',
                 )}
               >
                 {formatter && item?.value !== undefined && item.name ? (
@@ -233,7 +233,7 @@ const ChartTooltipContent = React.forwardRef<
                               'w-0 border-[1.5px] border-dashed bg-transparent':
                                 indicator === 'dashed',
                               'my-0.5': nestLabel && indicator === 'dashed',
-                            }
+                            },
                           )}
                           style={
                             {
@@ -250,7 +250,7 @@ const ChartTooltipContent = React.forwardRef<
                         'flex-1',
                         'justify-between',
                         'leading-none',
-                        nestLabel ? 'items-end' : 'items-center'
+                        nestLabel ? 'items-end' : 'items-center',
                       )}
                     >
                       <div className="grid gap-1.5">
@@ -273,7 +273,7 @@ const ChartTooltipContent = React.forwardRef<
         </div>
       </div>
     )
-  }
+  },
 )
 ChartTooltipContent.displayName = 'ChartTooltip'
 
@@ -302,7 +302,7 @@ const ChartLegendContent = React.forwardRef<
         'justify-center',
         'gap-4',
         verticalAlign === 'top' ? 'pb-3' : 'pt-3',
-        className
+        className,
       )}
     >
       {payload.map((item) => {
@@ -318,7 +318,7 @@ const ChartLegendContent = React.forwardRef<
               'gap-1.5',
               '[&>svg]:h-3',
               '[&>svg]:w-3',
-              '[&>svg]:text-muted-foreground'
+              '[&>svg]:text-muted-foreground',
             )}
           >
             {itemConfig?.icon && !hideIcon ? (
@@ -367,11 +367,10 @@ function getPayloadConfigFromPayload(config: ChartConfig, payload: unknown, key:
 }
 
 export {
-    ChartContainer,
-    ChartLegend,
-    ChartLegendContent,
-    ChartStyle,
-    ChartTooltip,
-    ChartTooltipContent
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle,
+  ChartTooltip,
+  ChartTooltipContent,
 }
-
