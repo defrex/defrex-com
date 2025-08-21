@@ -1,4 +1,4 @@
-import { postDetailsPath } from '@/app/posts/[slug]/path'
+import { postDetailsPath } from '@/app/(site)/[slug]/path'
 import { Inline } from '@/components/inline'
 import { PageContainer } from '@/components/page-container'
 import { Stack } from '@/components/stack'

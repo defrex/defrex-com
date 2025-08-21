@@ -1,0 +1,204 @@
+# Professional Experience
+
+## HighFi
+**Toronto, Ontario, Canada** · *Permanent Full-time*
+
+### Head of Product & Engineering
+*Sep 2023 - Apr 2025 (1 yr 8 mos)* · Hybrid
+
+At HighFi we made software to manage large-scale asset-backed debt facilities. It's a problem that is currently solved using spreadsheets and teams of analysts. They manually run reporting processes that end up being multiple people's full-time work.
+
+I lead the product and engineering team at HighFi. We built a product that could analyze a contract (the facility agreement) and use LLMs to extract the key logic into our custom configuration language. We could then connect directly to customer data sources (the "asset tape") and run the resulting financial model to give customers real-time access to the state of their facilities. We could also use this data to automate the reporting workflows and save large amounts of analyst time.
+
+HighFi had strong engagement, with our customers buying more from us over time. By the end of my time there we were close to $1B in assets managed on the platform.
+
+### Founding Engineer
+*Mar 2023 - Sep 2023 (7 mos)* · On-site
+
+---
+
+## Wealthsimple
+**Toronto, Ontario, Canada**
+
+### Staff Engineer
+*Feb 2022 - Feb 2023 (1 yr 1 mo)* · Permanent Full-time
+
+At Wealthsimple, I lead the product & engineering team for a newly acquired startup which needed some help with its technology. The market looked promising, but the product was unfortunately not very stable.
+
+Over the course of the year I lead the team we stabilized the product and worked with customers to make a variety of workflow and product improvements. This enabled a new wave of growth and engagement.
+
+Unfortunately after a year or so WS decided strategically that it made more sense to focus on their core business and exited a number of their experimental projects, including this one. The company was spun back out into an independent startup, and I decided this was a good time to move on.
+
+---
+
+## Treasure Financial
+**Toronto, Ontario, Canada**
+
+### Co-Founder
+*Sep 2019 - Jan 2022 (2 yrs 5 mos)*
+
+Treasure was an educational debit card for kids. We were focused on teaching good financial habits from a young age.
+
+At Treasure we initially built a money management app, not attached to a card (our issuing partner took ~1.5 yrs to launch). We worked closely with our first few hundred customers to make sure we were meeting the needs of their families. Establishing strong engagement which was boosted even further once we were able to launch the card.
+
+---
+
+## Bespoke Digital Inc.
+**Toronto, Ontario, Canada**
+
+### Partner
+*Jan 2019 - Aug 2019 (8 mos)*
+
+During this time I worked with an Adtech company out of LA who was bridging the gap between linear TV advertising and digital performance advertising through novel approaches to data analysis and efficient purchasing.
+
+They had had a lot of success, but were struggling to scale the largely spreadsheet-driven workflow they had come to rely on. I worked with the team to envision a new more scalable approach, including running an off-site design sprint.
+
+I also led a small engineering team to MVP the new approach, which they've since scaled into their core operation.
+
+**Skills:** Product Design · Full-Stack Development · Product Management
+
+---
+
+## CareGuide
+**Toronto, Ontario, Canada** · *2 yrs 4 mos total*
+
+### VP Product
+*Aug 2018 - Dec 2018 (5 mos)*
+
+When I took over as VP Product at CareGuide, my purview in the organization expanded from just Nanny Lane to all the sites.
+
+Earlier that year, in order to scale, CareGuide had split the product organization into multiple teams. The resulting org structure had lead to overburdened leadership and considerably slower cadence. Thus, my first act as VP Product was to re-organize. I hired and promoted to install Product Managers, who could organize their teams and ensure all the activity was focused on the company's strategic goals. These new teams got new mandates, focused on key metrics rather than specific areas of the codebase.
+
+With renewed focus, we were able to pay down a considerable amount of technical debt, which had been burdening the team for years. We also increased the conversion rates and lowered support tickets per active user considerably. This by primarily focusing energy on bug fixing, usability improvements, and algorithmic matching.
+
+### Director Of Engineering, Special Projects
+*May 2017 - Jul 2018 (1 yr 3 mos)*
+
+This mysterious title was effectively "internal founder" of Nanny Lane, a nanny job marketplace. I lead a team to devise a strategy for a new line of business with a new approach to monetization. This strategy had two key hypotheses:
+
+1. By monetizing transactions (in this case Nanny Payroll), rather than platform access (as CG does for its other sites), we could more closely align the business interests with the user interests while gaining a competitive advantage against the incumbent care.com.
+
+2. Nanny Share is a massive trend. Two families hiring a nanny together lowers the cost for families while simultaneously increasing pay for nannies. This fundamentally improved economic model will come to occupy a significant portion of the nanny market.
+
+I then became the lead engineer on a small team to test those hypotheses.
+
+We began by building landing pages to test the messaging and positioning of the value propositions, and after only a little iteration saw excellent results. This emboldened us to build out the MVP.
+
+Nanny Lane was built using a Rails-based GraphQL server and React client, including all the fixins like HMR, Code Splitting, Server Rendering, and Query Caching.
+
+In the time I worked on Nanny Lane, I transitioned from Lead Engineer to Product Manager. In that time we built a liquid nanny matching market with strong monetization.
+
+Nanny sharing on the platform didn't get to quite where we wanted to see it, based primarily on the hard local liquidity needed for family-family matching. Though I'm confident that's only a matter of achieving the right scale with geo-targeted growth strategies.
+
+### Senior Software Engineer
+*Sep 2016 - May 2017 (9 mos)*
+
+As an engineer at CareGuide I shipped a good number of features, including a redesign of the payment flows. In addition to feature development, I lead the charge to convert a hodge-podge of one-off REST endpoints into a consistently implemented GraphQL API. I also lead the effort to bring Linting into the CI process, devising a migration plan and getting the team on-board to increase code quality substantially.
+
+---
+
+## Bespoke Digital Inc.
+**Toronto, Ontario, Canada**
+
+### Partner
+*Jun 2015 - Aug 2016 (1 yr 3 mos)*
+
+A service shop focused on custom web applications.
+
+---
+
+## VerticalScope Inc.
+**Toronto, Ontario, Canada**
+
+### Engineering Lead, RateMDs.com
+*Apr 2014 - May 2015 (1 yr 2 mos)*
+
+I was hired as the lead developer on a team to update a newly acquired site: ratemds.com.
+
+It had been around on the web since 2004 collecting doctor reviews and ratings. The SEO and content was amazing, but virtually everything else about the site (design, engineering and monetization) was poor. We completely redesigned and rebuilt the site from the ground up, maintaining or improving all metrics.
+
+Over the course of that year, we researched and implemented a subscription-based native ad platform for doctors. After spending a while on funnel and value prop optimization we were able to get the subscription revenue on track to surpass the existing ad revenue.
+
+---
+
+## Shopcaster
+**Toronto, Ontario, Canada** · *3 yrs 7 mos total*
+
+### Co-Founder & CTO
+*Oct 2011 - Sep 2013 (2 yrs)* · Full-time
+
+Shopcaster was a pivot from Hipsell.
+
+Shopcaster was a platform for small, physical retailers to sell their products online.
+
+It had a suite of features to solve the problems of managing an ecommerce site as a small physical retailer. These include a just-in-time inventory reconciliation system, so the retailer doesn't have to maintain online and offline inventory separately; full-service "just print this label and stick it on the box we gave you" logistics; and easy-to-use native iOS and Android apps for managing a shop. Additionally, Shopcaster was a marketplace where consumers can shop independent retailers from across North America, helping to address distribution problems for the retailers.
+
+Shopcaster was a pivot from Hipsell (below), and raised an additional $1 million in angel funding. At its height, the team included 5 other developers and 4 marketing, sales and support people.
+
+Shopcaster was made with Django on the server. We employed Continuous Deployment, and had a Continuous Integration server chewing away on an extensive test suite after every push. There is a fully-featured REST API supporting a consumer-facing iOS application, as well as Android, iOS, and Backbone-based shop management applications. We also have a robust ecommerce backend which integrates directly with UPS to manage our logistics process. For performance, Shopcaster renders its pages with product and shop data pulled from a Solr instance which stores the data in a highly denormalized state.
+
+Aside from the mobile apps, my code was in all aspects of Shopcaster, and I reviewed almost everything I didn't write.
+
+### Co-Founder, Hipsell
+*Mar 2011 - Oct 2011 (8 mos)*
+
+Hipsell was a Pivot from Connectsy.
+
+Imagine Craigslist with improvements. Specifically: location-based, mobile, real-time, and several other such niceties. Hipsell raised a seed round with Mantella Venture Partners.
+
+We had a client application, a builder and an API server, the source for which you can see on github.com/defrex. I primarily worked on the client and builder. The JavaScript application frameworks of the time were a little light, so we rolled our own. Some specific features we included were:
+
+* Server-side prerendering, so we could serve a static page and bootstrap the application logic on top of that. This approach is faster for the user, and works better with the googlebot (among others).
+* Real-time data binding. What we ended up with is very similar to what Meteor is today. A websockets-based pub-sub protocol that allows the server to push data changes to the client. The client would then have that data mapped into the DOM such that it would update automatically. This meant that we didn't have to make specific features real time, we just got it everywhere.
+* Comprehensive memory management. "But JS is garbage collected", I hear. Yes, but with 1001 anonymous functions (with access to their parent scopes) bound to numerous nebulous events, things can very quickly get out of hand. This is especially true if you're loading and dismissing chains of views while those views are still referenced by some obscure event dispatcher. It's worse if those views are holding open network connections. Thus we made certain every view was correctly constructed and destroyed as to leave no traces behind.
+
+As an aside, the initial prototype of Hipsell that got us funded was using a Django server and Google Closure Tools on the client. My experience with Closure inspired a good part of hs-client, specifically the file dependency management. I even pulled that code out of hs-client and made it stand alone so I could use it again: js-depends.
+
+### Co-Founder, Connectsy
+*Mar 2010 - Mar 2011 (1 yr 1 mo)*
+
+Connectsy helped users get together with their friends on short notice. At the time, Foursquare and Gowalla were big. My co-founder and I would check in, only to have people comment "Hey! I would have joined you. Let me know next time you're doing that." So we thought, what if you could pre-check-in, to let people know where you intend to go, not just where you are.
+
+While the concept didn't attract many users, it was the start of my journey as an entrepreneur. In that respect, the things I learned were innumerable.
+
+From a strictly technical perspective, I was the primary author of both a native Android application and a Tornado-based API server. They are both now open source at github.com/defrex. As a point of interest, the Connectsy API server was the first project where I employed TDD. I don't use it strictly to this day, but the process was invaluable in teaching me the usefulness of tests.
+
+---
+
+## Wave Accounting
+**Toronto, Ontario, Canada**
+
+### Developer
+*Apr 2010 - Aug 2010 (5 mos)*
+
+Wave is a Toronto-based startup with several SAAS applications focused on small businesses. In 2010, they were Wave Accounting, and only had one product, which was web-based accounting software that would automatically sync with and categorize the transactions from company bank accounts. Like Mint for SMBs.
+
+While I only worked at Wave for a couple short stints, I wrote, and subsequently implemented a redesign of, the transaction categorization interface. This was a JS-based list of transactions. The user could perform bulk operations on the list, including dragging one or more rows to various category targets.
+
+---
+
+## Mazava
+
+### Developer
+*Oct 2008 - Apr 2010 (1 yr 7 mos)*
+
+Lead a development team to create a Kickstarter-like application for the developing world.
+
+---
+
+## Beat District
+
+### Developer
+*Feb 2009 - Dec 2009 (11 mos)*
+
+Beat District was a social competition site for beat makers. The site had real-time voting, and a persistent music player that allowed page navigation without loss of playback.
+
+A short list of interesting technologies at BD:
+
+* XHR-based page navigation. Today we'd call it PJAX, at the time we called it "Don't drop the beat."
+* Hash-based history management. replaceState would have been better, if we'd had it.
+* Tokyo Tyrant. I'm not sure what possessed us, but it was a fun trip. We even rolled our own ORM.
+* On-page file upload. No FileReader. We used a hidden iframe with XHR polling for upload percentages.
+* Custom `<audio>` shim. It was Adobe Flex based.
+
+In hindsight, we probably bit off more than we needed to. However, the challenge invigorated me and the rest of the team, and we did some great work.

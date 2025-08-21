@@ -5,10 +5,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 # defrex-com Development Guide
 
 ## Build & Development Commands
-- Development: `bun run dev` or `npm run dev` (with Turbopack)
-- Build: `bun run build` or `npm run build`
-- Start: `bun run start` or `npm run start`
-- Lint: `bun run lint` or `npm run lint`
+- Lint: `bun run lint`
+- Typecheck: `bun run typecheck`
 - Run tests: `bun test` or `bun test src/lib/utils/extract-markdown-component.test.ts` (for a single file)
 
 ## Code Style Guidelines
