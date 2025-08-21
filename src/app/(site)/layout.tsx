@@ -6,7 +6,11 @@ import { cn } from '@/lib/utils/cn'
 import Link from 'next/link'
 import type React from 'react'
 
-export default function SiteLayout({ children }: { children: React.ReactNode }) {
+export default function SiteLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <BackgroundGradient>
       <div
@@ -47,26 +51,26 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 'sm:justify-between',
               )}
             >
-              <Link href="/" className="transition-colors text-zinc-100 hover:text-violet-300">
+              <Link
+                href="/"
+                className="text-zinc-100 transition-colors
+                  hover:text-violet-300"
+              >
                 <Text as="h1" value="Aron Jones" size="xl" color="inherit" />
               </Link>
 
               <Inline className="gap-2 sm:gap-4">
-                <Link
-                  href="/resume"
-                  className="transition-colors text-violet-300 hover:text-violet-400"
-                >
-                  <Text value="Resume" color="inherit" />
-                </Link>
                 <a
                   href="https://github.com/defrex"
-                  className="transition-colors text-violet-300 hover:text-violet-400"
+                  className="text-violet-300 transition-colors
+                    hover:text-violet-400"
                 >
                   <Text value="GitHub" color="inherit" />
                 </a>
                 <a
                   href="https://www.linkedin.com/in/aronjones/"
-                  className="transition-colors text-violet-300 hover:text-violet-400"
+                  className="text-violet-300 transition-colors
+                    hover:text-violet-400"
                 >
                   <Text value="LinkedIn" color="inherit" />
                 </a>
