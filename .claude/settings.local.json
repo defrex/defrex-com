@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:abiogenesis.fun)",
+      "WebFetch(domain:spendwell.defrex.com)",
+      "WebFetch(domain:dicestribution.com)",
+      "WebFetch(domain:neuroevolution.defrex.com)",
+      "Bash(bun run lint:*)",
+      "Bash(bun run:*)",
+      "Bash(grep:*)",
+      "Bash(sed:*)",
+      "WebFetch(domain:tailwindcss.com)"
+    ],
+    "deny": []
+  }
+}
