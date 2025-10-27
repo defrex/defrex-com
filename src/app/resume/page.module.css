@@ -1,16 +1,15 @@
 .resume-page {
-  :global(.prose) {
+  & :global(.prose) {
     --muted-text: var(--color-stone-600);
     --tw-prose-headings: var(--color-stone-800);
-    /*--tw-prose-headings: var(--color-stone-100);*/
   }
 
-  section {
+  & section {
     display: flex;
     flex-direction: column;
     gap: calc(var(--spacing) * 6);
 
-    h2 {
+    & h2 {
       margin-bottom: 0;
     }
 
@@ -18,11 +17,11 @@
       padding-left: calc(var(--spacing) * 4);
       border-left: 1px solid var(--color-stone-300);
 
-      h3 {
+      & h3 {
         margin: 0;
       }
 
-      p:last-child {
+      & p:last-child {
         margin-bottom: 0;
       }
     }
