@@ -9,7 +9,12 @@
       "Bash(bun run:*)",
       "Bash(grep:*)",
       "Bash(sed:*)",
-      "WebFetch(domain:tailwindcss.com)"
+      "WebFetch(domain:tailwindcss.com)",
+      "mcp__chrome-devtools__list_pages",
+      "mcp__chrome-devtools__navigate_page",
+      "mcp__chrome-devtools__take_snapshot",
+      "mcp__chrome-devtools__evaluate_script",
+      "mcp__chrome-devtools__take_screenshot"
     ],
     "deny": []
   }

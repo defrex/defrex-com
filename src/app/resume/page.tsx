@@ -13,7 +13,7 @@ export const metadata = generateDefaultMetadata({
 export default function ResumePage() {
   return (
     <div className={cn('bg-stone-100', styles['resume-page'])}>
-      <div className="prose prose-stone mx-auto max-w-screen-md px-4 py-8">
+      <div className="prose prose-stone mx-auto max-w-screen-md">
         {/* Header */}
         <div className="not-prose flex flex-row gap-4">
           <ScaledImage
