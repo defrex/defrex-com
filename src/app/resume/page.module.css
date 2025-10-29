@@ -34,10 +34,6 @@
 }
 
 @media print {
-  body {
-    background-color: white;
-  }
-
   .resume-page {
     background-color: white;
     padding-top: 0;
