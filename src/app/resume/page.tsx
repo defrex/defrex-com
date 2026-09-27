@@ -63,6 +63,46 @@ export default function ResumePage() {
           </div>
         </div>
 
+        {/* Martell Ventures */}
+        <section>
+          <h2>Martell Ventures</h2>
+          <div>
+            <h3>Entrepreneur in Residence</h3>
+            <p className="text-sm text-[var(--muted-text)]">
+              Jan 2026 - Jul 2026 (7 mos)
+            </p>
+            <p>
+              I spent some time building an AI product for Martell Ventures
+              called Dispatch.
+            </p>
+            <p>
+              Dispatch was an AI harness (similar to OpenClaw or Hermes) focused
+              on email and calendar management. It had a persistent memory
+              system, skill-based proactive learning system, event and schedule
+              based automatons and more.
+            </p>
+          </div>
+        </section>
+
+        {/* Moselle */}
+        <section>
+          <h2>Moselle</h2>
+          <div>
+            <h3>Staff Engineer</h3>
+            <p className="text-sm text-[var(--muted-text)]">
+              Sep 2025 - Dec 2025 (4 mos)
+            </p>
+            <p>
+              I helped Moselle build the V1 of their Mo agent. This was a
+              co-pilot style agent that has context over what&apos;s going on on
+              the rest of the page and the ability to query and visualize data
+              using an embedded DuckDB database. It had strong engagement with
+              customers and set the groundwork for the future of Moselle&apos;s
+              product.
+            </p>
+          </div>
+        </section>
+
         {/* HighFi */}
         <section>
           <h2>HighFi</h2>
@@ -157,6 +197,34 @@ export default function ResumePage() {
           </div>
         </section>
 
+        {/* Bespoke Digital Inc. */}
+        <section>
+          <h2>Bespoke Digital Inc.</h2>
+
+          <div>
+            <h3>Partner</h3>
+            <p className="text-sm text-[var(--muted-text)]">
+              Jan 2019 - Aug 2019 (8 mos)
+            </p>
+            <p>
+              During this time I worked with an Adtech company out of LA who was
+              bridging the gap between linear TV advertising and digital
+              performance advertising through novel approaches to data analysis
+              and efficient purchasing.
+            </p>
+            <p>
+              They had had a lot of success, but were struggling to scale the
+              largely spreadsheet-driven workflow they had come to rely on. I
+              worked with the team to envision a new more scalable approach,
+              including running an off-site design sprint.
+            </p>
+            <p>
+              I also led a small engineering team to MVP the new approach, which
+              they&apos;ve since scaled into their core operation.
+            </p>
+          </div>
+        </section>
+
         {/* CareGuide */}
         <section>
           <h2>CareGuide</h2>
@@ -199,7 +267,33 @@ export default function ResumePage() {
               This mysterious title was effectively &quot;internal founder&quot;
               of Nanny Lane, a nanny job marketplace. I lead a team to devise a
               strategy for a new line of business with a new approach to
-              monetization.
+              monetization. This strategy had two key hypotheses:
+            </p>
+            <ol>
+              <li>
+                By monetizing transactions (in this case Nanny Payroll), rather
+                than platform access (as CG does for its other sites), we could
+                more closely align the business interests with the user
+                interests while gaining a competitive advantage against the
+                incumbent care.com.
+              </li>
+              <li>
+                Nanny Share is a massive trend. Two families hiring a nanny
+                together lowers the cost for families while simultaneously
+                increasing pay for nannies. This fundamentally improved economic
+                model will come to occupy a significant portion of the nanny
+                market.
+              </li>
+            </ol>
+            <p>
+              I then became the lead engineer on a small team to test those
+              hypotheses.
+            </p>
+            <p>
+              We began by building landing pages to test the messaging and
+              positioning of the value propositions, and after only a little
+              iteration saw excellent results. This emboldened us to build out
+              the MVP.
             </p>
             <p>
               Nanny Lane was built using a Rails-based GraphQL server and React
@@ -210,6 +304,13 @@ export default function ResumePage() {
               In the time I worked on Nanny Lane, I transitioned from Lead
               Engineer to Product Manager. In that time we built a liquid nanny
               matching market with strong monetization.
+            </p>
+            <p>
+              Nanny sharing on the platform didn&apos;t get to quite where we
+              wanted to see it, based primarily on the hard local liquidity
+              needed for family-family matching. Though I&apos;m confident
+              that&apos;s only a matter of achieving the right scale with
+              geo-targeted growth strategies.
             </p>
           </div>
 
@@ -227,6 +328,19 @@ export default function ResumePage() {
               migration plan and getting the team on-board to increase code
               quality substantially.
             </p>
+          </div>
+        </section>
+
+        {/* Bespoke Digital Inc. */}
+        <section>
+          <h2>Bespoke Digital Inc.</h2>
+
+          <div>
+            <h3>Partner</h3>
+            <p className="text-sm text-[var(--muted-text)]">
+              Jun 2015 - Aug 2016 (1 yr 3 mos)
+            </p>
+            <p>A service shop focused on custom web applications.</p>
           </div>
         </section>
 
@@ -308,10 +422,22 @@ export default function ResumePage() {
               Apr 2014 - May 2015 (1 yr 2 mos)
             </p>
             <p>
-              Lead developer on a team to update a newly acquired site:
-              ratemds.com. Completely redesigned and rebuilt the site from the
-              ground up, maintaining or improving all metrics. Researched and
-              implemented a subscription-based native ad platform for doctors.
+              I was hired as the lead developer on a team to update a newly
+              acquired site: ratemds.com.
+            </p>
+            <p>
+              It had been around on the web since 2004 collecting doctor reviews
+              and ratings. The SEO and content was amazing, but virtually
+              everything else about the site (design, engineering and
+              monetization) was poor. We completely redesigned and rebuilt the
+              site from the ground up, maintaining or improving all metrics.
+            </p>
+            <p>
+              Over the course of that year, we researched and implemented a
+              subscription-based native ad platform for doctors. After spending
+              a while on funnel and value prop optimization we were able to get
+              the subscription revenue on track to surpass the existing ad
+              revenue.
             </p>
           </div>
         </section>
