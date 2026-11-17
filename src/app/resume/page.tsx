@@ -31,8 +31,7 @@ export default function ResumePage() {
                 Aron Jones
               </h1>
               <p className="text-[var(--muted-text)]">
-                Generalist, with deep experience in Engineering, Product, and
-                Design
+                Deeply experienced Software Engineer and Product leader, currently focused on AI harness development and software lifecycle automation.
               </p>
             </div>
             <div className="flex flex-row items-center gap-3">
@@ -62,6 +61,44 @@ export default function ResumePage() {
             </div>
           </div>
         </div>
+
+        {/* Autobuild */}
+        <section>
+          <h2>Autobuild</h2>
+          <div>
+            <h3>Creator & Maintainer</h3>
+            <p className="text-sm text-[var(--muted-text)]">
+              Jun 2026 - Present
+            </p>
+            <p>
+              Autobuild is an open source software factory harness.
+            </p>
+            <p>
+              The user interacts with an operator agent. The operator agent learns
+              the overall vision and context for what&apos;s being built, and uses that context to file tickets. A dispatcher process picks up tickets, sets up worktrees or isolated sandbox environments, and runs tickets through a fixed pipeline.
+            </p>
+            <p>
+              The results have been dramatic. While building Dispatch, I went
+              from merging ~10 PRs a week driving agents by hand, to ~64 a week once
+              tickets ran through the pipeline that became Autobuild.
+              That&apos;s more than 6x the original throughput, and the PRs
+              didn&apos;t get any smaller or lower quality.
+            </p>
+            <p>
+              Since then I&apos;ve used Autobuild across a wide range of
+              projects and teams: legacy codebases and greenfield ones, solo
+              developers, small teams, and even non-developers. It has worked
+              well in every one of them.
+            </p>
+            <p>
+              <a href="https://www.autobuild.run/">autobuild.run</a>
+              {' · '}
+              <a href="https://github.com/defrex/autobuild">
+                github.com/defrex/autobuild
+              </a>
+            </p>
+          </div>
+        </section>
 
         {/* Martell Ventures */}
         <section>
